@@ -1,6 +1,8 @@
 package com.teamawesome.sqliteloginapp;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -30,4 +32,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
+
+    public  boolean updateData(String id, String name, String email, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_ID, id);
+        contentValues.put(COL_NAME, name);
+        contentValues.put(COL_EMAIL, email);
+        contentValues.put(COL_PASSWORD, password);
+
+        db.update(TABLE_NAME, contentValues, "ID = ?", new String[] { id } );
+        return true;
+    }
+
+
+    public Cursor getAllData(){
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor res = db.rawQuery(" select * from " + TABLE_NAME, null);
+        return res;
+    }
+
+    public Integer deleteData(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME,"ID = ?", new String[] {id});
+    }
+
 }
+
+

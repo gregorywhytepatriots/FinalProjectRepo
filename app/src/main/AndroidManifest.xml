@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.teamawesome.sqliteloginapp">
 
-    <uses-permission android:name="adroid.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="adroid.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CameraPage"></activity>
+        <activity android:name=".EditPage"></activity>
+        <activity android:name=".CameraPage" />
         <activity android:name=".LandingPage" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

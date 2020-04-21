@@ -27,4 +27,9 @@ public class LandingPage extends AppCompatActivity {
 
 
     }
+
+    public void Editbtn(View v){
+        Intent intent= new Intent(LandingPage.this, EditPage.class);
+        startActivity(intent);
+    }
 }
