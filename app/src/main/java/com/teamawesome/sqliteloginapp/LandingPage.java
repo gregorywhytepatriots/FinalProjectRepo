@@ -15,7 +15,6 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
 
         camerabtn = (Button) findViewById(R.id.camera);
-
         camerabtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,11 +24,11 @@ public class LandingPage extends AppCompatActivity {
             }
         });
 
-
     }
 
     public void Editbtn(View v){
         Intent intent= new Intent(LandingPage.this, EditPage.class);
         startActivity(intent);
     }
+
 }

@@ -31,7 +31,7 @@ public class CameraPage extends AppCompatActivity {
         }
     }
 
-    public void logout(View view){
+    public void onLogout(View view){
         Intent intent = new Intent(CameraPage.this, LoginActivity.class);
         startActivity(intent);
     }
